@@ -1,4 +1,4 @@
-\documentclass[UTF8]{book}
+\documentclass[10pt]{book}
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -12,90 +12,189 @@
 	keywordstyle=\bfseries,
 	commentstyle=\rmfamily\itshape,
 	stringstyle=\ttfamily}
-\newcommand{\iocode}[2]{\lstinline[language=Mathematica]|#1|\hspace{\fill}\emph{Output:#2}}
+\newcommand{\iocode}[2]{\lstinline[language=Mathematica]|#1|\hspace{\fill}\emph{Output: #2}}
 \newcommand{\incode}[1]{\lstinline[language=Mathematica]|#1|}
+\newcommand{\egio}[2]{\noindent\emph{\textbf{Example}}\quad\iocode{#1}{#2}}
 \begin{document}
-	\sffamily
-	\author{Hu Xiping}
-	\title{Note on Mathematica Programming}
-	\date{\today}
-	\maketitle
-	\tableofcontents
-	\part{Basics of Wolfram Language}
-		\chapter{Features of Mathematica}
-			\section{Evaluating Commands}
-				On desktop and web, you may press \textbf{Shift}+\textbf{Enter}. On mobile, press the Wolfram icon button
-			\section{Auto Complete}
-				Within the Mathematica notebook, you'll see a variety of aids to help you enter the Wolfram Language.
-			\section{Studying Resources}
-				You may RTFM(Read The F***ing Manual) or visit Wolfram website to equip essential skills on Wolfram Language. Or you can JFGI(Just F***ing Google It) if your problem can't be solved. Note that you need to use Google instead of Baidu due to study efficiency and you'd better use English to search for help.
-			
-			\section{Elementary Arithmetic}
-				\begin{tabular}{|c|c|c|}
-					\hline 
-					Command & Expression & Example \\ 
-					\hline 
-					Add & + & 2+2 \\ 
-					\hline
-					Subtract & - & 2-2 \\ 
-					\hline
-					Multiply & * & 2*2 \\ 
-					\hline
-					Division & / & 2/2 \\ 
-					\hline
-					Power & \^{} & 2\^{}2 \\ 
-					\hline
-					Brackets & ( and ) & (2+3)/5 \\
-					\hline
-				\end{tabular} 
-		\chapter{First glance at the Functions}
 
-			\section{Usage}
-				Functions names are all started with capital letters. To use a function, attach a "[]" behind the name of function and input parameters separated with "," into the brackets. Tip: insert a single space after the comma to make your code more visualized.
-				\paragraph{Example}
-				\iocode{Plus[3, 4, 5]}{12}
-				\newline\newline
-				You may use the output of function as a parameter of other functions.
-				\paragraph{Another Example}
-				\iocode{Times[2, Plus[2, 3]]}{7}
-			\subsection{Some basic functions}
-			\begin{tabbing}
-				\hspace{0.25\linewidth}\=\hspace{0.25\linewidth}\=\hspace{0.25\linewidth}\=\kill
-				\incode{Plus[2, 3]} \> \incode{Subtract[2, 3]} \> \incode{Times[2, 3]} \> \incode{Divide[2, 3]} \\ 
-				\incode{Power[2, 3]} \> \incode{Max[2, 3]} \> \incode{Min[2, 3]} \> \textbf{RandomInteger}[100] \\ 
-			\end{tabbing} 
-		\chapter{Introduction to Lists}
-			\paragraph{List is a way to store numbers} \{1,2,3,4,5\} is a list
-			\paragraph{Range[] is a function to create lists}
-			\begin{figure}[h!]
-				\centering
-				\includegraphics[width=0.7\linewidth]{pics/Range}
-				\caption{Function Range[]}
-				\label{fig:range}
-			\end{figure}
-			\paragraph{Reverse[] is a function to reverse the elements in a list}
-			\begin{figure}[h!]
-				\centering
-				\includegraphics[width=0.7\linewidth]{pics/Reverse}
-				\caption{Function Reverse[]}
-				\label{fig:reverse}
-			\end{figure}
-			\paragraph{Use Join[] to join Lists together}
-			\begin{figure}[h!]
-				\centering
-				\includegraphics[width=0.7\linewidth]{pics/Join}
-				\caption{Function Join[]}
-				\label{fig:join}
-			\end{figure}
-		\section{Visualizing Lists}
-			
-		
-		
-		
-			
-			
-			
-			
-				
-				
+\sffamily
+\author{Hu Xiping}
+\title{Note on Mathematica Programming}
+\date{\today}
+\maketitle
+\tableofcontents
+\part{Basics of Wolfram Language}
+\chapter{Features of Mathematica}
+\section{Evaluating Commands}
+On desktop and web, you may press \textbf{Shift}+\textbf{Enter}. On mobile, press the Wolfram icon vbutton
+\section{Auto Complete}
+Within the Mathematica notebook, you'll see a variety of aids to help you enter the Wolfram Language.
+\section{Studying Resources}
+You may RTFM(Read The F***ing Manual) or visit Wolfram website to equip essential skills on Wolfram Language. Or you can JFGI(Just F***ing Google It) if your problem can't be solved. Note that you need to use Google instead of Baidu due to study efficiency and you'd better use English to search for help.
+\section{Elementary Arithmetic}
+\begin{tabular}{|c|c|c|}
+\hline 
+Command & Expression & Example \\ 
+\hline 
+Add & + & 2+2 \\ 
+\hline
+Subtract & - & 2-2 \\ 
+\hline
+Multiply & * & 2*2 \\ 
+\hline
+Division & / & 2/2 \\ 
+\hline
+Power & \^{} & 2\^{}2 \\ 
+\hline
+Brackets & ( and ) & (2+3)/5 \\
+\hline
+\end{tabular} 
+\chapter{First glance at the Functions}
+
+\section{Usage}
+Functions names are all started with capital letters. To use a function, attach a "[]" behind the name of function and input parameters separated with "," into the brackets. Tip: insert a single space after the comma to make your code more visualized.
+
+\egio{Plus[3, 4, 5]}{12}
+
+\noindent You may use the output of function as a parameter of other functions.
+
+\egio{Times[2, Plus[2, 3]]}{7}
+\subsection{Some basic functions}
+\begin{tabbing}
+\hspace{0.25\linewidth}\=\hspace{0.25\linewidth}\=\hspace{0.25\linewidth}\=\kill
+\incode{Plus[2, 3]} \> \incode{Subtract[2, 3]} \> \incode{Times[2, 3]} \> \incode{Divide[2, 3]} \\ 
+\incode{Power[2, 3]} \> \incode{Max[2, 3]} \> \incode{Min[2, 3]} \> \textbf{RandomInteger}[100] \\ 
+\end{tabbing} 
+\chapter{Introduction to Lists}
+\section{List is a way to store numbers}
+\emph{\textbf{Example}}\quad
+\incode{\{1,2,3,4,5\}} is a list
+\section{Create a List}
+\subsection{Range[] is a function to create lists}
+\egio{Range[10]}{\{1,2,3,4,5,6,7,8,9,10\}}
+
+\paragraph{Note}\incode{Range[m,n,p]} means a list start with m, end with n, in step pf p]
+
+\egio{Range[3,7]}{\{3,4,5,6,7\}}
+
+\egio{Range[2,10,3]}{\{2,5,8\}}
+
+
+\subsection{Use Join[] to join Lists together}
+\egio{Join[Range[3],Range[5],Range[3]]}{\{1,2,3,1,2,3,4,5,1,2,3\}}
+\section{Visualizing Lists}
+
+\subsection{ListPlot}
+
+\emph{\textbf{Example}}\quad\lstinline[language=Mathematica]|ListPlot[1,2,3,4,3,4]|
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.45\linewidth]{figures/ListPlot}
+  \caption{ListPlot}
+\end{figure}
+
+
+
+\noindent\emph{\textbf{Example}}\quad\lstinline[language=Mathematica]|ListPlot[Join[Range[20]], Reverse[Range[20]], Range[30]]|
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.45\linewidth]{figures/ListPlot2}
+  \caption{ListPlot}
+\end{figure}
+
+
+\subsection{ListLinePlot}
+\label{subsec:label}
+\noindent\emph{\textbf{Example}}\quad\textbf{ListLinePlot}\lstinline[language=Mathematica]|[{1.5, 2, 4, 2.3, -9}]|
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.45\linewidth]{figures/ListLinePlot.pdf}
+  \caption{ListLinePlot}
+\end{figure}
+
+\subsection{BarChart}
+\label{subsec:label}
+
+\noindent\emph{\textbf{Example}}\quad\textbf{BarChart}\lstinline[language=Mathematica]|[{1.5, 2, 4, 2.3, -9}]|
+
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.45\linewidth]{figures/BarChart}
+  \caption{BarChart}
+\end{figure}
+
+\subsection{PieChart}
+\label{subsec:label}
+
+\noindent\emph{\textbf{Example}}\quad
+\textbf{BarChart}\lstinline[language=Mathematica]|[{1, 3, 5, 4}]|
+\begin{figure}[H]
+\begin{minipage}{.5\linewidth}
+  \centering
+  \includegraphics[width=0.7\linewidth]{figures/PieChart}
+  \caption{PieChart}
+\end{minipage}\begin{minipage}{.5\linewidth}
+  \centering
+  \includegraphics[width=0.7\linewidth]{figures/PieChart2}
+  \caption{Interact with PieChart segments}
+\end{minipage}
+\end{figure}
+
+\noindent\emph{Note that You can also left click on the chart to interact with the segments}
+
+\subsection{NumberLinePlot}
+\label{subsec:label}
+
+\emph{\textbf{Example}}\quad\textbf{NumberLinePlot}\lstinline[language=Mathematica]|[{2, 3, 1, 5, -6.2}]|
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.45\linewidth]{figures/NumberLinePlot}
+  \caption{NumberLinePlot}
+\end{figure}
+
+
+
+
+
+
+\section{Advanced Operation on List}
+\label{sec:label}
+
+\subsection{Operate with Basic arithmetic operators}
+\label{subsec:label}
+
+\subsubsection{Operate with numbers}
+\noindent\emph{\textbf{Example}}\quad\lstinline[language=Mathematica]|{1, 2, 3} + 10|\hspace{\fill}\emph{Output:} \lstinline[language=Mathematica]|{11,12,13}|
+
+\noindent\emph{\textbf{Example}}\quad
+\lstinline[language=Mathematica]|{1,2,3}-10|\hspace{\fill}\emph{Output:} \lstinline[language=Mathematica]|{-9,-8,-7}|
+
+
+\noindent\emph{\textbf{Example}}\quad
+\lstinline[language=Mathematica]|{1,2,3}*10}|\hspace{\fill}\emph{Output:} \lstinline[language=Mathematica]|{10,20,30}|
+
+\noindent\emph{\textbf{Example}}\quad\lstinline[language=Mathematica]|{1,2,3}/10|\hspace{\fill}\emph{Output:} \{$\frac{1}{10},\frac{1}{5},\frac{3}{10}$\}
+
+\subsubsection{Operate with other lists}
+\noindent\emph{\textbf{Example}}\quad \lstinline[language=Mathematica]|{1,2,3}+{1,2,3}| \hspace{\fill}\emph{Output:} \{2,3,4\}
+
+\noindent\emph{\textbf{Example}}\quad \lstinline[language=Mathematica]|{1,2,3}-{2,3,4}| \hspace{\fill}\emph{Output:} \{-1,-1,-1\}
+
+\noindent\emph{\textbf{Example}}\quad \lstinline[language=Mathematica]|{1,2,3}*{1,2,3}| \hspace{\fill}\emph{Output:} \{1,4,9\}
+
+\noindent\emph{\textbf{Example}}\quad \lstinline[language=Mathematica]|{1,2,3}/{2,3,4}| \hspace{\fill}\emph{Output:} \{$\frac{1}{2},\frac{2}{3},\frac{3}{4}$\}
+
+\subsection{Operate with Functions}
+
+
+\egio{Reverse[\{1,2,3\}]}{\{3,2,1\}}
+
+
+
+
+
 \end{document}
