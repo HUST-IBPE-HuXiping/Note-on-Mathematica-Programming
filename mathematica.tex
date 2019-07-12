@@ -70,7 +70,7 @@ Functions names are all started with capital letters. To use a function, attach 
 \emph{\textbf{Example}}\quad
 \lstinline[language=Mathematica]|{1,2,3,4,5}| is a list
 \section{Create a List}
-\subsection{Range[] is a function to create lists}
+\subsection{Range[] is a basic function to create lists}
 
 \noindent\emph{\textbf{Example}}\quad \lstinline[language=Mathematica]|Range[10]| \hspace{\fill}\emph{Output:} $\{1,2,3,4,5,6,7,8,9,10\}$
 
@@ -80,16 +80,44 @@ Functions names are all started with capital letters. To use a function, attach 
 
 \noindent\emph{\textbf{Example}}\quad \lstinline[language=Mathematica]|Range[2,10,3]| \hspace{\fill}\emph{Output:} $\{2,5,8\}$
 
+\subsection{IntegerDigits[] convert number to list}
+\noindent Use \textbf{IntegerDigits} to create lists out of integer number
+\newline
+\noindent\emph{\textbf{Example}}\quad \lstinline[language=Mathematica]|IntegerDigits[1988]| \hspace{\fill}\emph{Output:} \lstinline[language=Mathematica]|{1,9,8,8}|
 
+\subsection{Use Table to create List iteratingly}
+\label{subsec:label}
 
-
-
-\subsection{Use Join[] to join Lists together}
-
-\noindent\emph{\textbf{Example}}\quad \lstinline[language=Mathematica]|Join[Range[3],Range[5],Range[3]]| \hspace{\fill}\emph{Output:} $\{1,2,3,1,2,3,4,5,1,2,3\}$
-
-
-
+\subsubsection{Repeated}
+\emph{Usage:} \lstinline[language=Mathematica]|Table[content,times]| 
+\newline
+\noindent\emph{\textbf{Example}}\quad \lstinline[language=Mathematica]|Table[2,5]| \hspace{\fill}\emph{Output:} \lstinline[language=Mathematica]|{2,2,2,2,2}|
+\newline
+\noindent\emph{\textbf{Example}}\quad \lstinline[language=Mathematica]|Table[x,4]| \hspace{\fill}\emph{Output:} \lstinline[language=Mathematica]|{x,x,x,x}|
+\newline
+\noindent\emph{\textbf{Example}}\quad \lstinline[language=Mathematica]|Table[{1,2},3]| \hspace{\fill}\emph{Output:} \lstinline[language=Mathematica]|{{1,2},{1,2},{1,2}]}|
+\newline
+\subsubsection{Iterating}
+\noindent Iterate from 1 to n
+\newline
+\emph{Usage:} \lstinline[language=Mathematica]|Table[expression, {varibale,n}]|
+\newline
+\noindent\emph{\textbf{Example}}\quad \lstinline[language=Mathematica]|Table[x^2,{x,4}]| \hspace{\fill}\emph{Output:} \lstinline[language=Mathematica]|{1,4,9,16}|
+\newline
+\noindent\emph{\textbf{Example}}\quad \lstinline[language=Mathematica]|Table[Range[expt],{expt,3}]| \hspace{\fill}\emph{Output:} \lstinline[language=Mathematica]|{{1},{1,2},{1,2,3}}|
+\newline
+\newline
+\noindent Iterate from m to n
+\newline
+\emph{Usage:} \lstinline[language=Mathematica]|Table[expression, {varible,m,n}]|
+\newline
+\noindent\emph{\textbf{Example}}\quad \lstinline[language=Mathematica]|Table[f[n],{n,4,7}]| \hspace{\fill}\emph{Output:} \lstinline[language=Mathematica]|{f[4],f[5],f[6],f[7]}|
+\newline
+\newline
+\noindent Iterate from m to n in steps of p
+\emph{Usage:} \lstinline[language=Mathematica]|Table[expression, {m,n,p}]|
+\newline
+\noindent\emph{\textbf{Example}}\quad \lstinline[language=Mathematica]|Table[g[a],{4,10,2}]| \hspace{\fill}\emph{Output:} \lstinline[language=Mathematica]|{g[4],g[6],g[8],g[10]}|
 
 \section{Visualizing Lists}
 
@@ -200,6 +228,12 @@ Functions names are all started with capital letters. To use a function, attach 
 \subsection{Operate with Functions}
 
 \subsubsection{Whole list operation}
+
+\noindent Join lists together
+\newline
+\noindent\emph{\textbf{Example}}\quad \lstinline[language=Mathematica]|Join[Range[3],Range[5],Range[3]]| \hspace{\fill}\emph{Output:} $\{1,2,3,1,2,3,4,5,1,2,3\}$
+\newline
+\newline
 \noindent Reverse elements
 \newline
 \noindent\emph{\textbf{Example}}\quad \lstinline[language=Mathematica]|Reverse[\{1,2,3\}]| \hspace{\fill}\emph{Output:} $\{3,2,1\}$
@@ -227,7 +261,7 @@ Functions names are all started with capital letters. To use a function, attach 
 \newline
 \noindent Extract elements
 \newline
-\noindent \lstinline[language=Mathematica]|Part[list,position]| 
+\noindent \emph{Usage:} \lstinline[language=Mathematica]|Part[list,position]| 
 \newline
 \noindent\emph{\textbf{Example}}\quad \lstinline[language=Mathematica]|Part[{7,6,5},2]| \hspace{\fill}\emph{Output:} $6$
 \newline
@@ -247,6 +281,14 @@ Functions names are all started with capital letters. To use a function, attach 
 \noindent\emph{\textbf{Example}}\quad \lstinline[language=Mathematica]|Min[{6,7,1}]| \hspace{\fill}\emph{Output:} $1$
 \newline
 \noindent\emph{\textbf{Example}}\quad \lstinline[language=Mathematica]|Max[{6,7,1}]| \hspace{\fill}\emph{Output:} $7$
-
+\newline
+\newline
+\noindent Slice the list
+\newline
+\noindent \emph{Usage:} \lstinline[language=Mathematica]|Take/Drop[list,position]| 
+\newline
+\noindent\emph{\textbf{Example}}\quad \lstinline[language=Mathematica]|Take[{101,203,401,602,332,412},3]| \hspace{\fill}\emph{Output:} \lstinline[language=Mathematica]|{101,203,401}|
+\newline
+\noindent\emph{\textbf{Example}}\quad \lstinline[language=Mathematica]|Drop[{102,203,401,602,332,412},3]| \hspace{\fill}\emph{Output:} \lstinline[language=Mathematica]|{602,332,412}| 
 
 \end{document}
