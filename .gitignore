@@ -1,0 +1,10 @@
+*~
+_region_*
+auto/*
+flymd*
+*.aux
+*.log
+*.gz
+*.toc
+*.fmt
+
