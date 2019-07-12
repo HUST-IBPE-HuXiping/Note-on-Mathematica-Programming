@@ -12,9 +12,6 @@
 	keywordstyle=\bfseries,
 	commentstyle=\rmfamily\itshape,
 	stringstyle=\ttfamily}
-\newcommand{\iocode}[2]{\lstinline[language=Mathematica]|#1|\hspace{\fill}\emph{Output: #2}}
-\newcommand{\incode}[1]{\lstinline[language=Mathematica]|#1|}
-\newcommand{\egio}[2]{\noindent\emph{\textbf{Example}}\quad\iocode{#1}{#2}}
 \begin{document}
 
 \sffamily
@@ -54,34 +51,46 @@ Brackets & ( and ) & (2+3)/5 \\
 \section{Usage}
 Functions names are all started with capital letters. To use a function, attach a "[]" behind the name of function and input parameters separated with "," into the brackets. Tip: insert a single space after the comma to make your code more visualized.
 
-\egio{Plus[3, 4, 5]}{12}
+\noindent\emph{\textbf{Example}}\quad \lstinline[language=Mathematica]|Plus[3,4,5]| \hspace{\fill}\emph{Output:} $12$
 
 \noindent You may use the output of function as a parameter of other functions.
 
-\egio{Times[2, Plus[2, 3]]}{7}
+\noindent\emph{\textbf{Example}}\quad \lstinline[language=Mathematica]|Times[2,Plus[2,3]]| \hspace{\fill}\emph{Output:} $7$
+
+
+
 \subsection{Some basic functions}
 \begin{tabbing}
 \hspace{0.25\linewidth}\=\hspace{0.25\linewidth}\=\hspace{0.25\linewidth}\=\kill
-\incode{Plus[2, 3]} \> \incode{Subtract[2, 3]} \> \incode{Times[2, 3]} \> \incode{Divide[2, 3]} \\ 
-\incode{Power[2, 3]} \> \incode{Max[2, 3]} \> \incode{Min[2, 3]} \> \textbf{RandomInteger}[100] \\ 
+\lstinline[language=Mathematica]|Plus[2, 3]| \> \lstinline[language=Mathematica]|Subtract[2, 3]| \> \lstinline[language=Mathematica]|Times[2, 3]| \> \lstinline[language=Mathematica]|Divide[2, 3]| \\
+\lstinline[language=Mathematica]|Power[2, 3]| \> \lstinline[language=Mathematica]|Max[2, 3]| \> \lstinline[language=Mathematica]|Min[2, 3]| \> \textbf{RandomInteger}[100] \\ 
 \end{tabbing} 
 \chapter{Introduction to Lists}
 \section{List is a way to store numbers}
 \emph{\textbf{Example}}\quad
-\incode{\{1,2,3,4,5\}} is a list
+\lstinline[language=Mathematica]|{1,2,3,4,5}| is a list
 \section{Create a List}
 \subsection{Range[] is a function to create lists}
-\egio{Range[10]}{\{1,2,3,4,5,6,7,8,9,10\}}
 
-\paragraph{Note}\incode{Range[m,n,p]} means a list start with m, end with n, in step pf p]
+\noindent\emph{\textbf{Example}}\quad \lstinline[language=Mathematica]|Range[10]| \hspace{\fill}\emph{Output:} $\{1,2,3,4,5,6,7,8,9,10\}$
 
-\egio{Range[3,7]}{\{3,4,5,6,7\}}
+\paragraph{Note}\lstinline[language=Mathematica]|Range[m,n,p]| means a list start with m, end with n, in step of p
 
-\egio{Range[2,10,3]}{\{2,5,8\}}
+\noindent\emph{\textbf{Example}}\quad \lstinline[language=Mathematica]|Range[3,7]| \hspace{\fill}\emph{Output:} $\{3,4,5,6,7\}$
+
+\noindent\emph{\textbf{Example}}\quad \lstinline[language=Mathematica]|Range[2,10,3]| \hspace{\fill}\emph{Output:} $\{2,5,8\}$
+
+
+
 
 
 \subsection{Use Join[] to join Lists together}
-\egio{Join[Range[3],Range[5],Range[3]]}{\{1,2,3,1,2,3,4,5,1,2,3\}}
+
+\noindent\emph{\textbf{Example}}\quad \lstinline[language=Mathematica]|Join[Range[3],Range[5],Range[3]]| \hspace{\fill}\emph{Output:} $\{1,2,3,1,2,3,4,5,1,2,3\}$
+
+
+
+
 \section{Visualizing Lists}
 
 \subsection{ListPlot}
@@ -190,11 +199,54 @@ Functions names are all started with capital letters. To use a function, attach 
 
 \subsection{Operate with Functions}
 
+\subsubsection{Whole list operation}
+\noindent Reverse elements
+\newline
+\noindent\emph{\textbf{Example}}\quad \lstinline[language=Mathematica]|Reverse[\{1,2,3\}]| \hspace{\fill}\emph{Output:} $\{3,2,1\}$
+\newline
+\newline
+\noindent Length of the list
+\newline
+\noindent\emph{\textbf{Example}}\quad \lstinline[language=Mathematica]|Length[{5,3,4,2,3,4}]| \hspace{\fill}\emph{Output:} $6$
+\newline
+\newline
+\noindent Sum up
+\newline
+\noindent\emph{\textbf{Example}}\quad \lstinline[language=Mathematica]|Total[{1,2,3}]| \hspace{\fill}\emph{Output:} $6$
+\newline
+\newline
+\noindent Sort the elements
+\newline
+\noindent\emph{\textbf{Example}}\quad \lstinline[language=Mathematica]|Sort[{6,7,1}]| \hspace{\fill}\emph{Output:} \lstinline[language=Mathematica]|{1,6,7}| 
 
-\egio{Reverse[\{1,2,3\}]}{\{3,2,1\}}
+\subsubsection{Elements operation}
+\noindent See how many times an element appears
 
-
-
+\noindent\emph{\textbf{Example}}\quad \lstinline[language=Mathematica]|Count[{a,b,a,a,c,b,a},a]| \hspace{\fill}\emph{Output:} $4$
+\newline
+\newline
+\noindent Extract elements
+\newline
+\noindent \lstinline[language=Mathematica]|Part[list,position]| 
+\newline
+\noindent\emph{\textbf{Example}}\quad \lstinline[language=Mathematica]|Part[{7,6,5},2]| \hspace{\fill}\emph{Output:} $6$
+\newline
+\newline
+\noindent Extract the first Element
+\newline
+\noindent\emph{\textbf{Example}}\quad \lstinline[language=Mathematica]|First[{7,6,5}] (*The same as Part[list,1]*)| \hspace{\fill}\emph{Output:} $7$
+\newline
+\newline
+\noindent Extract the last element
+\newline
+\noindent\emph{\textbf{Example}}\quad \lstinline[language=Mathematica]|Last[{7,6,5}]| \hspace{\fill}\emph{Output:} $5$
+\newline
+\newline
+\noindent Extract the Max and the Min
+\newline
+\noindent\emph{\textbf{Example}}\quad \lstinline[language=Mathematica]|Min[{6,7,1}]| \hspace{\fill}\emph{Output:} $1$
+\newline
+\noindent\emph{\textbf{Example}}\quad \lstinline[language=Mathematica]|Max[{6,7,1}]| \hspace{\fill}\emph{Output:} $7$
 
 
 \end{document}
