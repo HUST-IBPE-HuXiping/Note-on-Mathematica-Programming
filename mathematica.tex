@@ -1,4 +1,6 @@
-\documentclass[10pt]{book}
+\documentclass[a4paper]{book}
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -39,7 +41,7 @@ Subtract & - & 2-2 \\
 \hline
 Multiply & * & 2*2 \\ 
 \hline
-Division & / & 2/2 \\ 
+fDivision & / & 2/2 \\ 
 \hline
 Power & \^{} & 2\^{}2 \\ 
 \hline
@@ -115,9 +117,22 @@ Functions names are all started with capital letters. To use a function, attach 
 \newline
 \newline
 \noindent Iterate from m to n in steps of p
+\newline
 \emph{Usage:} \lstinline[language=Mathematica]|Table[expression, {m,n,p}]|
 \newline
 \noindent\emph{\textbf{Example}}\quad \lstinline[language=Mathematica]|Table[g[a],{4,10,2}]| \hspace{\fill}\emph{Output:} \lstinline[language=Mathematica]|{g[4],g[6],g[8],g[10]}|
+\newline
+\newline
+\noindent Use 2 variables to iterate
+\newline
+\noindent\emph{\textbf{Example}}\quad \lstinline[language=Mathematica]|Table[i, {i, 4}, {j, 5}]| \newline
+\phantom{x}\hspace{\fill}\emph{Output:} \lstinline[language=Mathematica]|{{1, 1, 1, 1, 1}, {2, 2, 2, 2, 2}, {3, 3, 3, 3, 3}, {4, 4, 4, 4, 4}}|
+\newline
+
+
+
+
+
 
 \section{Visualizing Lists}
 
